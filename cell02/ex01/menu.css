@@ -1,0 +1,16 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+}
+
+/* .dropdown-content div {
+    display: block;
+} */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
