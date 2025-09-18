@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mini Task Manager</title>
+	<style>
+		body {
+		font-family: Arial, sans-serif;
+		padding: 20px;
+		}
+		#ft_list {
+		margin-top: 20px;
+		border: 1px solid #ccc;
+		padding: 10px;
+		min-height: 100px;
+		}
+		.todo {
+		background-color: #f0f0f0;
+		margin-bottom: 5px;
+		padding: 10px;
+		cursor: pointer;
+		}
+		#newBtn {
+		padding: 10px 20px;
+		font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<button id="newBtn">New</button>
+	<div id="ft_list"></div>
+
+	<script>
+		window.onload = function () {
+		const saved = getCookie("todoList");
+		if (saved) {
+		const todos = JSON.parse(saved);
+		todos.forEach(todo => addTodo(todo));
+		}
+	};
+	
+	// Add new todo
+	document.getElementById("newBtn").addEventListener("click", function () {
+		const text = prompt("Enter a new TO DO:");
+		if (text && text.trim() !== "") {
+		addTodo(text.trim());
+		saveTodos();
+		}
+	});
+
+	function addTodo(text) {
+		const ftList = document.getElementById("ft_list");
+		const todoDiv = document.createElement("div");
+		todoDiv.className = "todo";
+		todoDiv.textContent = text;
+	
+		// Add click listener for deletion
+		todoDiv.addEventListener("click", function () {
+		const confirmDelete = confirm("Do you want to delete this TO DO?");
+		if (confirmDelete) {
+			ftList.removeChild(todoDiv);
+			saveTodos();
+		}
+		});
+	
+		// Insert at top
+		ftList.insertBefore(todoDiv, ftList.firstChild);
+	}
+	
+	// Save todos to cookie
+	function saveTodos() {
+		const todos = [];
+		document.querySelectorAll("#ft_list .todo").forEach(todo => {
+		todos.push(todo.textContent);
+		});
+		document.cookie = "todoList=" + JSON.stringify(todos) + ";path=/";
+	}
+	
+	// Get cookie value
+	function getCookie(name) {
+		const value = "; " + document.cookie;
+		const parts = value.split("; " + name + "=");
+		if (parts.length === 2) return parts.pop().split(";").shift();
+	}
+	
+	</script>
+</body>
+</html>

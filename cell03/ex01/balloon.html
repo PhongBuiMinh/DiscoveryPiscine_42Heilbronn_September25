@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+    <style>
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            margin: 10em auto;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colors = ['red', 'green', 'blue'];
+            let n_colors = 3;
+            let i = 0;
+            let size = 200;
+
+            balloon.addEventListener('click', () => {
+                size += 10;
+                i = (i + 1) % n_colors;
+                if (size > 420) {
+                    size = 200;
+                    i = 0;
+                }
+                update_bal();
+            });
+
+            balloon.addEventListener('mouseleave', () => {
+                if (size != 200) {
+                    size -= 5;
+                }
+                i = (i - 1 + n_colors) % n_colors;
+                update_bal();
+            });
+
+            function update_bal() {
+                document.getElementById('balloon').style.width = size + 'px';
+                document.getElementById('balloon').style.height = size + 'px';
+                document.getElementById('balloon').style.backgroundColor = colors[i];
+            }
+        })
+    </script>
+</head>
+<body>
+    <div id="balloon"></div>
+</body>
+</html>
+
+<!-- transition: all 0.3s ease; size = Math.max(200, size - 5); alert("Balloon exploded!"); colors.length;-->

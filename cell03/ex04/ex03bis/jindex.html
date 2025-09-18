@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <style>
+        body {
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+        }
+
+        #btn {
+            margin: 1em;
+            padding: 1em;
+            font-size: 20px;
+            border: 2px solid white;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+
+        #ft_list {
+            margin: 1em;
+            min-height: 10%;
+            border: 2px solid white;
+            background-color: black;
+        }
+
+        .todo {
+            background-color: #f0f0f0;
+            margin-bottom: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function getCookie(name) {
+            const cookies = document.cookie.split("; ");
+            for (let cookie of cookies) {
+                const [key, value] = cookie.split("=");
+                if (key === name) {
+                    return decodeURIComponent(value);
+                }
+            }
+            return null;
+        }
+
+        function saveTodo() {
+            const todos = [];
+            $("#ft_list .todo").each(function () {
+                todos.push($(this).text());
+            });
+            document.cookie = "todoList=" + encodeURIComponent(JSON.stringify(todos)) + ";path=/";
+        }
+
+        function addTodo(text) {
+            const $todo = $("<div></div>")
+                .addClass("todo")
+                .text(text)
+                .on("click", function () {
+                    if (confirm("Do you want to delete this TO DO?")) {
+                        $(this).remove();
+                        saveTodo();
+                    }
+                });
+            $("#ft_list").prepend($todo);
+        }
+
+        $(document).ready(function () {
+            const saved = getCookie("todoList");
+            if (saved) {
+                const todos = JSON.parse(saved);
+                todos.forEach(todo => addTodo(todo));
+            }
+
+            $("#btn").on("click", function () {
+                const text = prompt("Enter a new TO DO:");
+                if (text && text.trim() !== "") {
+                    addTodo(text.trim());
+                    saveTodo();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">New</button>
+    <div id="ft_list"></div>
+</body>
+</html>
