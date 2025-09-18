@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+td {
+    border: 1px solid black;
+}
+
+table {
+    width: 50%;
+    height: 33%;
+    max-height: 900px;
+    max-width: 300px;
+    text-shadow: 5px 5px 5px lightblue;
+    border-collapse: collapse;
+    box-shadow: 15px 15px 15px darkcyan;
+}
+
+#header {
+    font-family: 'Courier New';
+    font-size: 20px;
+    height: 5%;
+}
+
+#picture {
+    height: 50%;
+    background-image: url("../../img/Phong.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#info {
+    font-family: 'Helvetica';
+    height: 50%;
+}
+
+#contact {
+    background-color: black;
+    color: white;
+}
+
+/* horizontal-offset vertical-offset blur-radius color; # edge */

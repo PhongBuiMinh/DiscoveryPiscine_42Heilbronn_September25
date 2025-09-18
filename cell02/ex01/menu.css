@@ -1,3 +1,22 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url("https://www.shutterstock.com/image-vector/boy-look-towards-sky-hill-600nw-2495590565.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.dropbtn {
+    background-color: lightsalmon;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+
 .dropdown {
     position: relative;
 }
@@ -5,12 +24,27 @@
 .dropdown-content {
     position: absolute;
     display: none;
+    min-width: 162px;
+    background-color: linen;
 }
 
-/* .dropdown-content div {
+.dropdown-content a {
+    color: black;
     display: block;
-} */
+    text-decoration: none;
+    padding: 1em;
+}
+
+.dropbtn:hover {
+    background-color: rgb(226, 157, 111);
+}
+
+.dropdown-content a:hover {
+    background-color: lemonchiffon;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* margin: top right bottom left */

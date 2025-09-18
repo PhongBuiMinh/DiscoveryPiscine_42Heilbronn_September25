@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Background</title>
+    <link rel="stylesheet" href="background.css">
+    <script>
+        function get_rd_color() {
+            const r = Math.floor(Math.random() * 256)
+            const g = Math.floor(Math.random() * 256)
+            const b = Math.floor(Math.random() * 256)
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function change_bg_color() {
+            document.querySelector('body').style.backgroundColor = get_rd_color();
+        }
+    </script>
+</head>
+<body>
+    <div class="object">
+        <button onclick="change_bg_color()">Click me to change the background color!</button>
+    </div>
+</body>
+</html>
+
+<!--
+    convert 
+-->

@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: 50px;
+    color: white;
+}
+
+.parallax, .object {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.bg1 {
+    background-image: url("../../img/daytime.jpg");
+}
+
+.bg2 {
+    background-image: url("../../img/latenight.jpg");
+}
+
+.object {
+    height: 20em;
+    background-color: black;
+}
+
+/* horizontal centering */
+/* vertical centering */
+/* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb0Z8XJRjnHRCP565yd52JeBvwZz9UyNHoNA&s */
+/* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLfdh0SVUx3VaRhl2SK9riCdjED0iHg3Pbsg&s */
