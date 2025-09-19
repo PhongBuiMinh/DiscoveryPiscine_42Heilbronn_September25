@@ -1,0 +1,90 @@
+/* Homepage */
+.homepage {
+	height: 100%;
+	background-attachment: fixed;
+	background-image: url('static/images/homepage.png');
+	font-size: 32px;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.hp_article {
+	font-size: 30px;
+	flex: 0 0 60%;
+	padding-top: 10%;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-attachment: fixed;
+	background-color: rgba(13, 27, 42, 0.5);
+	text-align: left;
+	color: #E0E1DD;
+}
+
+.hp_button1 {
+	height: 40px;
+	width: 80px;
+	font-size: 20px;
+	background-color: #E0E1DD;
+	border: none;
+	color: rgba(13, 27, 42, 0.7);
+}
+
+.hp_button2 {
+	height: 40px;
+	width: 140px;
+	font-size: 20px;
+	background-color: rgba(13, 27, 42, 0.8);
+	color: #E0E1DD;
+	border: none;
+}
+
+p {
+	font-size: 20px;
+}
+
+/* profile */
+.profile {
+	height: 100%;
+	background-attachment: fixed;
+	background-image: url('static/images/homepage.png');
+	background-size: cover;
+	background-position: center;
+}
+
+/* skill */
+.skill {
+	background-attachment: fixed;
+	height: 70%;
+	background-image: url('static/images/homepage.png');
+	font-size: 32px;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.sl_article {
+	position: relative;
+	flex: 0 0 40%;
+	height: 90%;
+	background-color: rgba(224, 225, 221, 0.9);
+	text-align: center;
+	color: #0D1B2A;
+	padding-top: 2em;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+li {
+	color: #0D1B2A;
+	font-size: 25px;
+}
+
+/* Page 1 */
+
+
+/* 50% opacity */
+/* background: linear-gradient(to left, rgba(13, 27, 42, 0.5) 85%, rgba(13, 27, 42, 0) 100%); */
