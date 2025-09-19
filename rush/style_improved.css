@@ -44,6 +44,10 @@ body, html {
     justify-content: center;
 }
 
+a {
+	text-decoration: none;
+}
+
 .profile-image {
     width: 120px;
     height: 120px;
